@@ -112,10 +112,10 @@ body {
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 22px;
+  height: 2px;
   background: #333;
-  margin: 3px 0;
+  margin: 2px 0;
   transition: 0.3s;
 }
 
@@ -203,6 +203,7 @@ body {
   padding: 0 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-top: 4rem;
   animation: fadeInUp 1s ease-out 0.8s both;
@@ -213,6 +214,7 @@ body {
   color: #374151;
   border-right: 2px solid #e5e7eb;
   padding-right: 2rem;
+  text-align: center;
 }
 
 .tech-icons {
@@ -601,80 +603,6 @@ body {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .hero-container,
-  .about-content,
-  .project-card,
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .tech-stack {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .tech-stack p {
-    border-right: none;
-    border-bottom: 2px solid #e5e7eb;
-    padding-right: 0;
-    padding-bottom: 1rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer .container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .project-tech,
-  .project-links {
-    justify-content: center;
-  }
-}
-
-/* Scroll offset for fixed navbar */
-section {
-  scroll-margin-top: 70px;
-}
-
-/* Add this to your existing App.css */
-
 /* Resume download button styling */
 .hero-links .resume-download {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -700,13 +628,684 @@ section {
   font-size: 1.2rem;
 }
 
-/* Ensure all hero links have consistent spacing */
-.hero-links a {
-  margin-right: 1rem;
+/* MOBILE RESPONSIVE FIXES */
+
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  /* FIXED: Smaller hamburger menu */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    width: 90%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Hero section mobile */
+  .hero {
+    padding: 80px 0 40px;
+    min-height: 90vh;
+    text-align: center;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  /* FIXED: Hero icons in one line centered */
+  .hero-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+  }
+
+  .hero-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  /* FIXED: Tech stack centered */
+  .tech-stack {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tech-stack p {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .tech-icons {
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Sections mobile */
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* About section mobile */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-text {
+    order: 2;
+  }
+
+  .about-image {
+    order: 1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* FIXED: Projects mobile - image on top, everything centered */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-image {
+    width: 100%;
+    order: 1;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .project-info {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .project-info p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .project-tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  .project-tech span {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-link {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    padding: 0.8rem;
+    justify-content: center;
+  }
+
+  /* Override reverse class completely for mobile */
+  .project-card.reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-card.reverse .project-image {
+    order: 1;
+    width: 100%;
+  }
+
+  .project-card.reverse .project-info {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+  /* FIXED: Contact section mobile */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+
+  /* FIXED: Mail follows location layout (not centered) */
+  .contact-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .contact-form {
+    order: 2;
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents iOS zoom */
+    padding: 0.8rem;
+  }
+
+  /* FIXED: Send message button centered */
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  /* Footer mobile */
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 }
 
-.hero-links a:last-child {
-  margin-right: 0;
+/* Medium Mobile Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+
+  /* FIXED: Smaller hamburger menu */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    width: 90%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Hero section */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* FIXED: Hero icons in one line centered */
+  .hero-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+  }
+
+  .hero-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  /* FIXED: Tech stack centered */
+.tech-stack {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tech-stack p {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .tech-icons {
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-icons img {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* About section */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* FIXED: Projects - image on top, everything centered */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-image {
+    width: 100%;
+    order: 1;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .project-info {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .project-info p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .project-tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  .project-tech span {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn-link {
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Override reverse class completely for mobile */
+  .project-card.reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-card.reverse .project-image {
+    order: 1;
+    width: 100%;
+  }
+
+  .project-card.reverse .project-info {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* FIXED: Contact section */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+
+  /* FIXED: Mail follows location layout */
+  .contact-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .contact-form {
+    order: 2;
+    padding: 2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  /* FIXED: Send message button centered */
+  .btn-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .project-image {
+    order: 1;
+  }
+
+  .project-info {
+    order: 2;
+  }
+
+  .project-card.reverse .project-image {
+    order: 1;
+  }
+
+  .project-card.reverse .project-info {
+    order: 2;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .nav-container {
+    height: 50px;
+  }
+
+  .nav-menu {
+    top: 50px;
+  }
+
+  section {
+    scroll-margin-top: 50px;
+  }
+
+  .hamburger {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link,
+  .btn-primary,
+  .btn-link,
+  .hero-links a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* Status Messages */
