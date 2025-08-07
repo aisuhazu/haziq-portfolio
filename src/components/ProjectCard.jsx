@@ -1,5 +1,5 @@
 function ProjectCard({ project }) {
-  const { title, description, image, technologies, codeLink, liveLink, reverse } = project
+  const { title, description, image, technologies, codeLink, liveLink, reverse, icon } = project
 
   return (
     <div className={`project-card ${reverse ? 'reverse' : ''}`}>
@@ -7,7 +7,10 @@ function ProjectCard({ project }) {
         <img src={image} alt={title} />
       </div>
       <div className="project-info">
-        <h3>{title}</h3>
+        <h3>
+          {icon && <i className={icon}></i>}
+          {title}
+        </h3>
         <p>{description}</p>
         <div className="project-tech">
           {technologies.map((tech, index) => (

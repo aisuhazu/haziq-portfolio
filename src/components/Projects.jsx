@@ -21,27 +21,15 @@ function Projects() {
     },
     {
       id: 2,
-      title: "COINDOM 🪙",
+      title: " ShopSync",
+      icon: "bi bi-shop",
       description:
-        "Coindom is a crypto app that allows users to search for information about various cryptocurrencies in real-time.",
-      image:
-        "https://via.placeholder.com/500x300/3b82f6/ffffff?text=Crypto+App",
-      technologies: ["React", "SCSS"],
-      codeLink: "#",
-      liveLink: "#",
+        "ShopSync is a comprehensive, modern inventory management system built with React and Firebase. It's designed to help businesses streamline their operations by providing a centralized platform for managing products, suppliers, orders, and analytics.",
+      image: "ShopSync.jpg",
+      technologies: ["React", "Firebase", "Firestore", "Axios"],
+      codeLink: "https://github.com/aisuhazu/shop-sync",
+      liveLink: "https://shop-sync-lilac-tau.vercel.app/",
       reverse: true,
-    },
-    {
-      id: 3,
-      title: "PORTFOLIO WEBSITE 💼",
-      description:
-        "A modern, responsive portfolio website built with React and styled with CSS. Features smooth animations and a clean, professional design.",
-      image:
-        "https://via.placeholder.com/500x300/10b981/ffffff?text=Portfolio+Site",
-      technologies: ["React", "CSS3", "JavaScript"],
-      codeLink: "#",
-      liveLink: "#",
-      reverse: false,
     },
   ];
 
